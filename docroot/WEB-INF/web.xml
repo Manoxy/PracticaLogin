@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" >
+	<display-name>SERVLET</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>\html\jsp\index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp </url-pattern>
+			<include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+	<servlet>
+		<servlet-name>Busqueda</servlet-name>
+		<servlet-class>org.curso.login.Busqueda</servlet-class>
+	 </servlet>
+	 <servlet>
+		<servlet-name>BusquedaCursos</servlet-name>
+		<servlet-class>org.curso.login.BusquedaCursos</servlet-class>
+	 </servlet>
+	 <servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>org.curso.login.Delete</servlet-class>
+	 </servlet>
+	 <servlet>
+		<servlet-name>DeleteCursos</servlet-name>
+		<servlet-class>org.curso.login.DeleteCursos</servlet-class>
+	 </servlet>
+	 <servlet>
+		<servlet-name>InputCursos</servlet-name>
+		<servlet-class>org.curso.login.InputCursos</servlet-class>
+	 </servlet>
+	 <servlet>
+		<servlet-name>log</servlet-name>
+		<servlet-class>org.curso.login.log</servlet-class>
+	 </servlet>
+	 <servlet>
+		<servlet-name>Update</servlet-name>
+		<servlet-class>org.curso.login.Update</servlet-class>
+	 </servlet>
+	 <servlet>
+		<servlet-name>UpdateCursos</servlet-name>
+		<servlet-class>org.curso.login.UpdateCursos</servlet-class>
+	 </servlet>
+</web-app>	
