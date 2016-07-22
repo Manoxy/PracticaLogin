@@ -1,6 +1,5 @@
 <%@ page import="java.sql.*" import="java.util.*" import="java.io.*" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-	
-	 
+
 	<% 
 			String idUsuario =  request.getParameter("idUsuario");
 			String nombreUsuario = request.getParameter("nombreUsuario");

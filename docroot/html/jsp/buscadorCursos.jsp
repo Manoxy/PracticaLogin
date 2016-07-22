@@ -32,8 +32,7 @@
                 
                 out.println("</TR>"); 
                 }
-                out.println("</table>");
-            	
+                
             } 
             catch(SQLException e) {
             	

@@ -18,8 +18,8 @@
 		<% }%>
 		<div align="center">
 		<h3>Bienvenido <%=session.getAttribute("login")%></h3>
-		<a href="html\jsp\usuarios.jsp">Gestión de Usuarios</a> <br>
-		<a href="html\jsp\cursos.jsp">Gestión de Cursos</a> <br>
+		<a href="html\jsp\usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
+		<a href="html\jsp\cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
 		<a href="html\jsp\logout.jsp">Cerrar Sesión</a><br>
 		</div>
 		

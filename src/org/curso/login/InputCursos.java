@@ -67,11 +67,14 @@ public class InputCursos extends HttpServlet {
 			int i =  st.executeUpdate("INSERT INTO cursos (nombre, descripcion, fecha_inicio, fecha_fin, numero_horas, objetivos, requisitos) VALUES ('"+ nombre +"','"+ descripcion +"', '"+ fechaInicio +"', '"+ fechaFin +"', '"+ numeroHoras +"', '"+ objetivos +"', '"+ requisitos +"') ;");   
 			
 			if (i > 0) {	
-    			this.getServletContext().getRequestDispatcher("/html/jsp/cursos.jsp").forward(request, response);
+    			
+			//	this.getServletContext().getRequestDispatcher("/html/jsp/cursos.jsp").forward(request, response);
+    			response.sendRedirect("/html/jsp/fallo.jsp?cursos=true");
     			
 		    } else {
 		    	
-		    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    //	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
 		    	
 		    }
 			}catch(SQLException e){

@@ -74,11 +74,13 @@ public class Update extends HttpServlet {
 			int i = st.executeUpdate("UPDATE usuarios SET nombre_usuario='"+ nombreUsuario +"', nombre='"+ nombre +"', apellidos='"+apellidos+"', correo_electronico='"+correo+"', clave='"+clave+"', tipo_usuario='" + tipoUsuario +"' WHERE id ="+ idUsuario +"; ");   
 			
 			if (i > 0) {	
-    			this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
+    		// this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
+    			response.sendRedirect("/html/jsp/usuarios.jsp?comprobado=true");
     			
 		    } else {
 		    	System.err.println("Has modificado mal un usuario");
-		    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    // this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
 		    	
 		    }
 			}catch(SQLException e){

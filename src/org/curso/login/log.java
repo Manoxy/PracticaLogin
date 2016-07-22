@@ -98,12 +98,15 @@ public class log extends HttpServlet {
 			int i =  st.executeUpdate("INSERT INTO usuarios (nombre_usuario, nombre, apellidos, correo_electronico, clave, tipo_usuario) VALUES ('"+ nombreUsuario +"','"+ nombre +"', '"+apellidos+"', '"+correo+"', '"+clave+"', '"+ tipoUsuario +"' ) ;");   
 			
 			if (i > 0) {	
-    			this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
+    			// this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
+    			response.sendRedirect("/html/jsp/usuarios.jsp?comprobado=true");
     			
     			
 		    } else {
 		    	
-		    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    	// this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    	
+		    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
 		    	
 		    }
 			}catch(SQLException e){

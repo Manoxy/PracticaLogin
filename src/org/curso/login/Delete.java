@@ -57,11 +57,16 @@ public class Delete extends HttpServlet {
 						int i =  st.executeUpdate("DELETE FROM usuarios WHERE nombre_usuario='"+nombreUsuario+"' AND id='"+idUsuario+"';");   
 						
 						if (i > 0) {	
-			    			this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
+			    			
+							//	this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
+			    			
+			    			response.sendRedirect("/html/jsp/usuarios.jsp?comprobado=true");
 			    			
 					    } else {
 					    	
-					    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+					    	// this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+					    	
+					    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
 					    	
 					    }
 						}catch(SQLException e){

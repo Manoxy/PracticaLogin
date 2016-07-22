@@ -63,11 +63,15 @@ public class DeleteCursos extends HttpServlet {
 								int i =  st.executeUpdate("DELETE FROM cursos WHERE nombre='"+ nombre +"' AND id='"+ id +"';");   
 								
 								if (i > 0) {	
-					    			this.getServletContext().getRequestDispatcher("/html/jsp/cursos.jsp").forward(request, response);
+					    			
+								//	this.getServletContext().getRequestDispatcher("/html/jsp/cursos.jsp").forward(request, response);
+					    			
+					    			response.sendRedirect("/html/jsp/cursos.jsp?comprobado=true");
 					    			
 							    } else {
 							    	
-							    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+							    //	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+							    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
 							    	
 							    }
 								}catch(SQLException e){
