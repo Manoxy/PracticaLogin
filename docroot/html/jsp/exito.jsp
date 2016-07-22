@@ -7,8 +7,15 @@
 	</head>
 	<body>
 		<%
-			// String nombreUsuario = request.Parameter("login");
-		%>
+		  	String comprobado = request.getParameter("comprobado");
+		if(comprobado.equals("true")){
+			%>
+				
+				<%@ include file='mensajeBien.jsp' %> 
+			<% 	}else{%>
+					
+				<%@ include file='mensajeMal.jsp' %> 
+		<% }%>
 		<div align="center">
 		<h3>Bienvenido <%=session.getAttribute("login")%></h3>
 		<a href="html\jsp\usuarios.jsp">Gestión de Usuarios</a> <br>

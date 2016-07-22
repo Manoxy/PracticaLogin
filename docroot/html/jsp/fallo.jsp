@@ -7,6 +7,16 @@
 		
 	</head>
 	<body>
+		<%
+		  	String comprobado = request.getParameter("comprobado");
+		if(comprobado.equals("false")){
+			%>
+				
+				<%@ include file='mensajeMal.jsp' %> 
+			<% 	}else{%>
+					
+				<%@ include file='mensajeBien.jsp' %> 
+		<% }%>
 		<h3 align="center">
 			Datos incorrectos
 		</h3>

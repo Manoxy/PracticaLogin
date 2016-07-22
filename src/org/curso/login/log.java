@@ -58,11 +58,11 @@ public class log extends HttpServlet {
     				HttpSession session = request.getSession();
     				session.setAttribute("login", login);
     				session.setAttribute("tipoUsuario", tipoUsuario);
-    				this.getServletContext().getRequestDispatcher("/html/jsp/exito.jsp").forward(request, response);
+    				this.getServletContext().getRequestDispatcher("/html/jsp/exito.jsp?comprobado=true").forward(request, response);
     				System.out.println("El usuario logeado tiene el rol de :" +tipoUsuario);
     				
 		    } else {
-		    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp?comprobado=false").forward(request, response);
 		    }
 			}catch(SQLException e){
 				e.printStackTrace();
@@ -98,7 +98,7 @@ public class log extends HttpServlet {
 			int i =  st.executeUpdate("INSERT INTO usuarios (nombre_usuario, nombre, apellidos, correo_electronico, clave, tipo_usuario) VALUES ('"+ nombreUsuario +"','"+ nombre +"', '"+apellidos+"', '"+correo+"', '"+clave+"', '"+ tipoUsuario +"' ) ;");   
 			
 			if (i > 0) {	
-    			this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp?comprobado=true").forward(request, response);
+    			this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
     			
     			
 		    } else {
