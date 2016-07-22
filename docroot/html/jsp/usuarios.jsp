@@ -53,7 +53,7 @@
             
               <label for="nombreUsuario">Nombre Usuario &nbsp;</label><input type="text" maxlength="20" name="nombreUsuario" required/><p>
               
-              <label for="idUsuario">ID de usuario&nbsp;</label><input  type="number" maxlength="1" name="idUsuario" required/><p>
+              <label for="idUsuario">ID de usuario&nbsp;</label><input  type="number" min="1" name="idUsuario" required/><p>
            
               <label for="enviar"><input type="submit" value="Enviar" name="enviar" /></label>
               
@@ -66,7 +66,7 @@
           <fieldset>
             <legend>Editar perfil de usuario</legend>
             
-            	<label for="idUsuario">ID de Usuario &nbsp;</label><input type="number" maxlength="10" name="idUsuario" /><p>
+            	<label for="idUsuario">ID de Usuario &nbsp;</label><input type="number" min="1" name="idUsuario" required /><p>
         
               	<label for="nombreUsuario">Nombre Usuario &nbsp;</label><input type="text" maxlength="20" name="nombreUsuario" required/><p>
               
@@ -78,7 +78,7 @@
              
               	<label for="clave">Contrase&ntilde;a&nbsp;</label><input type="text" maxlength="20" name="clave" required/><p>
               
-              	<select id="tipoUsuario" name="tipoUsuario">
+              	<select id="tipoUsuario" name="tipoUsuario" required>
               		<option value="selecciona..." disabled selected>Elije una opción </option>
                 	<option value="Administrador" > Administrador</option>
                 	<option value="Alumno"> Alumno</option>
@@ -91,79 +91,88 @@
 
 
  
-      <form action="#" name="busqueda" method="post" style="padding-top:30px;">
+      <form id="busqueda" method="post" style="padding-top:30px;">
             <fieldset>
               <legend>Busqueda de usuarios</legend>
-              	<label for="login">ID de Usuario &nbsp;</label><input type="number" maxlength="10" name="idUsuario" /><p>
+              	<label for="login">ID de Usuario &nbsp;</label><input type="number" min="1" name="idUsuario" id="idUsuario" /><p>
               
-                <label for="login">Nombre Usuario &nbsp;</label><input type="text" maxlength="20" name="nombreUsuario" /><p>
+                <label for="login">Nombre Usuario &nbsp;</label><input type="text" maxlength="20" name="nombreUsuario" id="nombreUsuario" /><p>
              
-                <label for="nombre">Nombre&nbsp;</label><input type="text" maxlength="20" name="nombre" /><p>
+                <label for="nombre">Nombre&nbsp;</label><input type="text" maxlength="20" name="nombre" id="nombre" /><p>
                 
-                <label for="apellidos">Apellidos&nbsp;</label><input type="text" maxlength="20" name="apellidos" /><p>
+                <label for="apellidos">Apellidos&nbsp;</label><input type="text" maxlength="20" name="apellidos" id="apellidos" /><p>
                 
-                <label for="correo">Correo electrónico&nbsp;</label><input type="text" maxlength="20" name="correo"/><p>
+                <label for="correo">Correo electrónico&nbsp;</label><input type="text" maxlength="20" name="correo" id="correo" /><p>
                 
-               <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="text" maxlength="20" name="clave"/><p>
+               <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="text" maxlength="20" name="clave" id="clave" /><p>
+                <!-- 
                 <select  name="tipoUsuario">
-                	<option value="selecciona..." disabled selected>Elije una opción </option>
+                	<option value="" selected>Elije una opción </option>
                 	<option value="Administrador"> Administrador</option>
                 	<option value="Alumno"> Alumno</option>
                 	<option value="Profesor"> Profesor</option>
                 
                 </select>
+                -->
+                <label for="tipoUsuario">Tipo de Usuario&nbsp;</label><input type="text" maxlength="20" name="tipoUsuario" id="tipoUsuario"/><p>
                 
  
-                <label for="enviar"><input class="btn btn-default" type="submit" value="Enviar" name="enviar" /></label>
+                <label for="enviar"><button type="button" class="btn btn-default" id="botonBuscar">Enviar</button></label>
                
             </fieldset>
           </form>
-       <div align="center">
-    		<table class="table" border="2px"> 
-    	<tr>
-            <th>&nbsp;ID de Usuario&nbsp;</th><th>&nbsp;Nombre de Usuario&nbsp;</th><th>&nbsp;Nombre&nbsp;</th><th>&nbsp;Apellidos&nbsp;</th> <th>&nbsp;Correo electrónico&nbsp;</th><th>&nbsp;Contrase&ntilde;a&nbsp;</th><th>&nbsp;Tipo de Usuario&nbsp;</th>
-       	</tr>		
-
-		<% 
-			String idUsuario =  request.getParameter("idUsuario");
-			String nombreUsuario = request.getParameter("nombreUsuario");
-            String nombre = request.getParameter("nombre");
-            String apellidos = request.getParameter("apellidos");
-            String correo = request.getParameter("correo");    
-		    String clave = request.getParameter("clave");
-		    String tipoUsuario = request.getParameter("tipoUsuario");
-		    
-		    
-        try {
-        	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "123456");
-			String consulta =("SELECT * FROM usuarios WHERE id LIKE '%"+idUsuario+"%' AND nombre_usuario LIKE '%"+nombreUsuario+"%' AND nombre LIKE '%"+nombre+"%' AND apellidos LIKE '%"+apellidos+"%' AND correo_electronico LIKE '%"+correo+"%' AND clave LIKE '%"+clave+"%' AND tipo_usuario LIKE '%"+tipoUsuario+"%';");   
-			ResultSet rs = null;
-	        PreparedStatement pst = null;
-	        pst = con.prepareStatement(consulta);
-	        rs = pst.executeQuery();
-            while(rs.next()) {
-            	
-                out.println("<TR>");
-                out.println("<TD>"+rs.getString("id")+"</TD>");
-                out.println("<TD>"+rs.getString("nombre_usuario")+"</TD>");
-                out.println("<TD>"+rs.getString("nombre")+"</TD>");
-                out.println("<TD>"+rs.getString("apellidos")+"</TD>");
-                out.println("<TD>"+rs.getString("correo_electronico")+"</TD>");
-                out.println("<TD>"+rs.getString("clave")+"</TD>");
-                out.println("<TD>"+rs.getString("tipo_usuario")+"</TD>");
-             
-                out.println("</TR>"); 
-                }
-                out.println("</table>");
-
-            } 
-            catch(SQLException e) {
-            	
-            };
-            %> 
+      
+        	<br/>
+        	<br/>
+        <div align="center">
+    			<table class="table" border="2px">
+    		<thead>  
+    		<tr>
+    		
+            <th>&nbsp;ID de Usuario&nbsp;</th>
+            <th>&nbsp;Nombre de Usuario&nbsp;</th>
+            <th>&nbsp;Nombre&nbsp;</th>
+            <th>&nbsp;Apellidos&nbsp;</th>
+            <th>&nbsp;Correo electrónico&nbsp;</th>
+            <th>&nbsp;Contrase&ntilde;a&nbsp;</th>
+            <th>&nbsp;Tipo de Usuario&nbsp;</th>
+       		
+       		</tr>
+       		</thead>
+       	<tbody id="datosUser"></tbody>	
+			
         </div>
-        	<br/>
-        	<br/>
+	
+		<script>
+				$("#botonBuscar")
+				.on("click",
+					function(){
+							var idUsuario = $("#idUsuario").val();
+							var nombreUsuario = $("#nombreUsuario").val();
+							var nombre = $("#nombre").val();
+							var apellidos = $("#apellidos").val();
+							var correo = $("#correo").val();
+							var clave = $("#clave").val();
+							var tipoUsuario = $("#tipoUsuario").val();
+							console.log("La búsqueda de usuarios tiene un rol de: "	+ tipoUsuario);
+							var paramPost = { 	idUsuario: idUsuario,
+										nombreUsuario: nombreUsuario,
+										nombre: nombre,
+										apellidos: apellidos,
+										correo: correo,
+										clave: clave,
+										tipoUsuario: tipoUsuario
+									};			
+					
+					$.post("${pageContext.request.contextPath}/html/jsp/buscadorUsuarios.jsp", 
+							paramPost,
+							function(data){
+								$("#datosUser").html(data);
+							});
+					});
+					
+		</script>
+		
         <footer>
 			<%@include file="/html/jsp/footer.jsp" %>
 		</footer>

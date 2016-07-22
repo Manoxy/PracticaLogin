@@ -93,7 +93,7 @@
 	             
 	              <label for="fechaFin">Fecha de fin&nbsp;</label><input type="date" size="10" name="fechaFin"/><p>
 	             
-	              <label for="numeroHoras">Número de horas&nbsp;</label><input  type="text" min="1" name="numeroHoras"/><p>
+	              <label for="numeroHoras">Número de horas&nbsp;</label><input  type="number" min="1" name="numeroHoras"/><p>
 	             
 	              <b>Objetivos&nbsp;</b><br/><textarea name="objetivos" cols="50" rows="4"> </textarea><p>
 	             
