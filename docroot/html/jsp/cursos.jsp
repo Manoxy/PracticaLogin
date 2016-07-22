@@ -99,58 +99,64 @@
 	             
 	              <b>Requisitos&nbsp;</b><br/><textarea name="requisitos" cols="50" rows="4"> </textarea><p>
 	             
-	              <label for="enviar"><input class="btn btn-default" type="submit" value="Enviar" name="enviar" /></label>
+	              <label for="enviar"><button class="btn btn-default" type="button" id="botonBuscar" /></label>
               
             </fieldset>
           </form>
           
          </div>
           
-      	<table class="table" border="2px"> 
-    <tr>
-   		<th>&nbsp;ID del curso&nbsp;</th><th>&nbsp;Nombre&nbsp;</th><th>&nbsp;Descripción&nbsp;</th><th>&nbsp;Fecha de inicio&nbsp;</th><th>&nbsp;Fecha de Fin&nbsp;</th><th>&nbsp;Numero de Horas&nbsp;</th><th>&nbsp;Objetivos&nbsp;</th><th>&nbsp;Requisitos&nbsp;</th>
-    </tr>		
-			<% 
-			String idCurso = request.getParameter("idCurso");    
-			String nombre = request.getParameter("nombre");    
-		    String descripcion = request.getParameter("descripcion");
-		    String fechaInicio = request.getParameter("fechaInicio");
-		    String fechaFin = request.getParameter("fechaFin");
-		    String numeroHoras = request.getParameter("numeroHoras");
-		    String objetivos = request.getParameter("objetivos");
-		    String requisitos = request.getParameter("requisitos");
-		    
-        try {
-        	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "123456");
-			String consulta =("SELECT * FROM cursos WHERE id LIKE '%"+idCurso+"%' AND nombre LIKE '%"+nombre+"%' AND descripcion LIKE '%"+descripcion+"%' AND fecha_inicio LIKE '%"+fechaInicio+"%' AND fecha_fin LIKE '%"+fechaFin+"%' AND numero_horas LIKE '%"+numeroHoras+"%' AND objetivos LIKE '%"+objetivos+"%' AND requisitos LIKE '%"+requisitos+"%';");   
-			ResultSet rs = null;
-	        PreparedStatement pst = null;
-	        pst = con.prepareStatement(consulta);
-	        rs = pst.executeQuery();
-            while(rs.next()) {
-            	
-                out.println("<TR>");
-                out.println("<TD>"+rs.getString("id")+"</TD>");
-                out.println("<TD>"+rs.getString("nombre")+"</TD>");
-                out.println("<TD>"+rs.getString("descripcion")+"</TD>");
-                out.println("<TD>"+rs.getString("fecha_inicio")+"</TD>");
-                out.println("<TD>"+rs.getString("fecha_fin")+"</TD>");
-                out.println("<TD>"+rs.getString("numero_horas")+"</TD>");
-                out.println("<TD>"+rs.getString("objetivos")+"</TD>");
-                out.println("<TD>"+rs.getString("requisitos")+"</TD>");
-                
-                out.println("</TR>"); 
-                }
-                out.println("</table>");
-            	
-            } 
-            catch(SQLException e) {
-            	
-            };
-            %>
-        
-			<br/>
-			<br/>
+      	<div align="center">
+    			<table class="table" border="2px">
+    		<thead>  
+    		<tr>
+    		
+            <th>&nbsp;ID de Curso&nbsp;</th>
+            <th>&nbsp;Nombre&nbsp;</th>
+            <th>&nbsp;Descripción&nbsp;</th>
+            <th>&nbsp;Fecha de inicio&nbsp;</th>
+            <th>&nbsp;Fecha de fin&nbsp;</th>
+            <th>&nbsp;Número de horas&ntilde;a&nbsp;</th>
+            <th>&nbsp;Objetivos&nbsp;</th>
+            <th>&nbsp;Requisitos&nbsp;</th>
+       		
+       		</tr>
+       		</thead>
+       	<tbody id="datosUser"></tbody>	
+			</table>
+        </div>
+		<script>
+				$("#botonBuscar")
+				.on("click",
+					function(){
+							var idCurso = $("#idCurso").val();
+							var nombre = $("#nombre").val();
+							var descripcion = $("#descripcion").val();
+							var fechaInicio = $("#fechaInicio").val();
+							var fechaFin = $("#fechaFin").val();
+							var numeroHoras = $("#numeroHoras").val();
+							var objetivos = $("#objetivos").val();
+							var requisitos = $("#requisitos").val();
+							console.log("La búsqueda de usuarios tiene un rol de: "	+ tipoUsuario);
+							var paramPost = { 	idCurso: idCurso,
+										nombre: nombre,
+										descripcion: descripcion,
+										fechaInicio: fechaInicio,
+										fechaFin: fechaFin,
+										numeroHoras: numeroHoras,
+										objetivos: objetivos,
+										requisitos: requisitos
+									};			
+					
+					$.post("${pageContext.request.contextPath}/html/jsp/buscadorCursos.jsp", 
+							paramPost,
+							function(data){
+								$("#datosUser").html(data);
+							});
+					});
+					
+		</script>
+			
 		<footer>
 			<%@include file="footer.jsp" %>
 		</footer>	

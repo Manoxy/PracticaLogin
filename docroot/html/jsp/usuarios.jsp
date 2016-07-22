@@ -140,7 +140,7 @@
        		</tr>
        		</thead>
        	<tbody id="datosUser"></tbody>	
-			
+			</table>
         </div>
 	
 		<script>
