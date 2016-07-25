@@ -35,8 +35,7 @@
     	String rol = (String)session.getAttribute("tipoUsuario");
 			if(rol.equals("Alumno")){
 		%>
-				
-				
+					
 				<%@ include file='formDeleteCursos.jsp' %>
 				<%@ include file='formBusquedaCursos.jsp' %> 
 				
