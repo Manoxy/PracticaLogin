@@ -60,13 +60,13 @@ public class Delete extends HttpServlet {
 			    			
 							//	this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
 			    			
-			    			response.sendRedirect("/html/jsp/usuarios.jsp?comprobado=true");
+			    			response.sendRedirect("html/jsp/usuarios.jsp?comprobado=true");
 			    			
 					    } else {
 					    	
 					    	// this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
 					    	
-					    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
+					    	response.sendRedirect("html/jsp/fallo.jsp?comprobado=false");
 					    	
 					    }
 						}catch(SQLException e){

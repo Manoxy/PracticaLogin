@@ -75,12 +75,12 @@ public class Update extends HttpServlet {
 			
 			if (i > 0) {	
     		// this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
-    			response.sendRedirect("/html/jsp/usuarios.jsp?comprobado=true");
+    			response.sendRedirect("html/jsp/usuarios.jsp?comprobado=true");
     			
 		    } else {
 		    	System.err.println("Has modificado mal un usuario");
 		    // this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
-		    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
+		    	response.sendRedirect("html/jsp/fallo.jsp?comprobado=false");
 		    	
 		    }
 			}catch(SQLException e){
@@ -111,7 +111,7 @@ public class Update extends HttpServlet {
 				}
 		*/
 			}
-		doGet(request, response);
+	
 	}
 	
 }

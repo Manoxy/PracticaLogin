@@ -12,15 +12,20 @@
 			%>
 				
 				<%@ include file='mensajeBien.jsp' %> 
-			<% 	}else{%>
+			
+		<% }else if(comprobado.equals("nulo")){
+			%>	
+			<%@ include file='mensajeNulo.jsp' %> 
+		
+		<%}else{%>
 					
-				<%@ include file='mensajeMal.jsp' %> 
-		<% }%>
+			<%@ include file='mensajeMal.jsp' %> 
+		<% } %>
 		<div align="center">
 		<h3>Bienvenido <%=session.getAttribute("login")%></h3>
-		<a href="html\jsp\usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
-		<a href="html\jsp\cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-		<a href="html\jsp\logout.jsp">Cerrar Sesión</a><br>
+		<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
+		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
+		<a href=logout.jsp">Cerrar Sesión</a><br>
 		</div>
 		
 		<br>

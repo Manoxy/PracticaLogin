@@ -66,12 +66,12 @@ public class DeleteCursos extends HttpServlet {
 					    			
 								//	this.getServletContext().getRequestDispatcher("/html/jsp/cursos.jsp").forward(request, response);
 					    			
-					    			response.sendRedirect("/html/jsp/cursos.jsp?comprobado=true");
+					    			response.sendRedirect("html/jsp/cursos.jsp?comprobado=true");
 					    			
 							    } else {
 							    	
 							    //	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
-							    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
+							    	response.sendRedirect("html/jsp/fallo.jsp?comprobado=false");
 							    	
 							    }
 								}catch(SQLException e){

@@ -38,9 +38,9 @@
              
               <b>Descripción</b>&nbsp;<br/><textarea name="descripcion" cols="50" rows="4"> </textarea><p>
              
-              <label for="fechaInicio">Fecha de inicio&nbsp;</label><input type="date" size="10" name="fechaInicio" required/><p>
+              <label for="fechaInicio">Fecha de inicio&nbsp;</label><input type="date"  name="fechaInicio" required/><p>
               
-              <label for="fechaFin">Fecha de fin&nbsp;</label><input type="date" size="10" name="fechaFin" required/><p>
+              <label for="fechaFin">Fecha de fin&nbsp;</label><input type="date" name="fechaFin" required/><p>
               
               <label for="numeroHoras">Número de horas&nbsp;</label><input type="number" name="numeroHoras" min="1" required/><p>
               

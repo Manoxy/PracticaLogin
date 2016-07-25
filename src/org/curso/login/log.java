@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.http.HttpSession;
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -58,11 +60,13 @@ public class log extends HttpServlet {
     				HttpSession session = request.getSession();
     				session.setAttribute("login", login);
     				session.setAttribute("tipoUsuario", tipoUsuario);
-    				this.getServletContext().getRequestDispatcher("/html/jsp/exito.jsp?comprobado=true").forward(request, response);
+    				// this.getServletContext().getRequestDispatcher("/html/jsp/exito.jsp?comprobado=true").forward(request, response);
+    				response.sendRedirect("html/jsp/exito.jsp?comprobado=true");
     				System.out.println("El usuario logeado tiene el rol de :" +tipoUsuario);
     				
 		    } else {
-		    	this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp?comprobado=false").forward(request, response);
+		    	//this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp?comprobado=false").forward(request, response);
+		    	response.sendRedirect("html/jsp/usuarios.jsp?comprobado=false");
 		    }
 			}catch(SQLException e){
 				e.printStackTrace();
@@ -95,25 +99,25 @@ public class log extends HttpServlet {
 		    String tipoUsuario = request.getParameter("tipoUsuario");
 		    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "123456");
 		   	Statement st = con.createStatement();
-			int i =  st.executeUpdate("INSERT INTO usuarios (nombre_usuario, nombre, apellidos, correo_electronico, clave, tipo_usuario) VALUES ('"+ nombreUsuario +"','"+ nombre +"', '"+apellidos+"', '"+correo+"', '"+clave+"', '"+ tipoUsuario +"' ) ;");   
+		   	
+			int i =  st.executeUpdate("INSERT IGNORE INTO usuarios (nombre_usuario, nombre, apellidos, correo_electronico, clave, tipo_usuario) VALUES ('"+ nombreUsuario +"','"+ nombre +"', '"+apellidos+"', '"+correo+"', '"+clave+"', '"+ tipoUsuario +"' ) ;");   
 			
 			if (i > 0) {	
-    			// this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response);
-    			response.sendRedirect("/html/jsp/usuarios.jsp?comprobado=true");
+    			/* this.getServletContext().getRequestDispatcher("/html/jsp/usuarios.jsp").forward(request, response); */
+    			response.sendRedirect("html/jsp/usuarios.jsp?comprobado=true");
     			
     			
 		    } else {
 		    	
-		    	// this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response);
+		    	// this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp").forward(request, response); 
 		    	
-		    	response.sendRedirect("/html/jsp/fallo.jsp?comprobado=false");
+		    	response.sendRedirect("html/jsp/fallo.jsp?comprobado=false");
 		    	
 		    }
 			}catch(SQLException e){
 				
 				e.printStackTrace();
 			}
-		doGet(request, response);
 	}
 	
 }
