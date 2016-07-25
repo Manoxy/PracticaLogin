@@ -30,7 +30,7 @@
       </div>
       
       		<%
-		  	String rol = request.getParameter("tipoUsuario");
+		  	String rol = (String)session.getAttribute("tipoUsuario");
 			if(rol.equals("Alumno")){
 		%>
 				
@@ -48,6 +48,10 @@
 				<%@ include file='formUpdateUsuarios.jsp' %>
 				<%@ include file='formBusquedaUsuarios.jsp' %> 
 		<% }%>
+		
+		 <footer>
+			<%@include file="/html/jsp/footer.jsp" %>
+		</footer>
 
 </body>
 </html>
