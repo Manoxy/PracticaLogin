@@ -20,7 +20,7 @@
 		<h3 align="center">
 			Los Datos que has introducido son incorrectos
 		</h3>
-			<p align="center"><a href="exito.jsp?comprobado=nulo">Volver al inicio</a></p>
+			<p align="center"><a href="index.jsp">Volver al inicio</a></p>
 			
 		<%@include file="footer.jsp" %>
 	</body>

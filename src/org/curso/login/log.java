@@ -53,7 +53,7 @@ public class log extends HttpServlet {
 		    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "123456");
 		   	Statement st = con.createStatement();
 		   	ResultSet rs;
-			rs =  st.executeQuery("SELECT nombre_usuario, clave, tipo_usuario FROM usuarios WHERE nombre_usuario='" + login + "' AND clave='" + password + "';");
+			rs =  st.executeQuery("SELECT  nombre_usuario, clave, tipo_usuario FROM usuarios WHERE nombre_usuario='" + login + "' AND clave='" + password + "';");
 				
 			if (rs.next()) {
 					String tipoUsuario = rs.getString("tipo_usuario");
@@ -66,7 +66,7 @@ public class log extends HttpServlet {
     				
 		    } else {
 		    	//this.getServletContext().getRequestDispatcher("/html/jsp/fallo.jsp?comprobado=false").forward(request, response);
-		    	response.sendRedirect("html/jsp/usuarios.jsp?comprobado=false");
+		    		response.sendRedirect("html/jsp/fallo.jsp?comprobado=false");
 		    }
 			}catch(SQLException e){
 				e.printStackTrace();

@@ -19,7 +19,9 @@
 						<label for="enviar"><input class="btn btn-default" type="submit" value="Enviar" name="enviar" /></label>
 						</div>
 			</form>
+				<a href="registrarse.jsp">Si no estas registrado haz click aqui</a>
 			</div>
+				
 			
 			<h:mensajitos validado="hola"></h:mensajitos>
 			<br>

@@ -19,32 +19,50 @@
 				<%@ include file='mensajeMal.jsp' %> 
 		<% }%>
 		
-		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
-		
-    <div id="home" class="tab-pane fade in active">
-      <div align="center">
-        <h3>Hola <%=session.getAttribute("login")%></h3>
-        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
-        <a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
-        <a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-        <a href="logout.jsp">Cerrar Sesión</a><br>
-      </div>
-    </div>
-    	
-    	<%
+		<%
     	String rol = (String)session.getAttribute("tipoUsuario");
+	
 			if(rol.equals("Alumno")){
 		%>
-					
-				<%@ include file='formDeleteCursos.jsp' %>
+		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
+		
+	    <div id="home" class="tab-pane fade in active">
+	      <div align="center">
+	        <h3>Hola <%=session.getAttribute("login")%></h3>
+	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
+	        	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
+				<a href="logout.jsp">Cerrar Sesión</a><br>
+	      </div>
+	    </div>
 				<%@ include file='formBusquedaCursos.jsp' %> 
 				
+				
 		<%}else if(rol.equals("Profesor")){ %>
+		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
 		
-					<%@ include file='formBusquedaCursos.jsp' %>
+	    <div id="home" class="tab-pane fade in active">
+	      <div align="center">
+	        <h3>Hola <%=session.getAttribute("login")%></h3>
+	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
+		  		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
+		  		<a href="logout.jsp">Cerrar Sesión</a><br>
+	      	</div>
+	   	 	</div>
+					<%@ include file='formBusquedaMiCurso.jsp' %>
 					
 					
 		<%}else if(rol.equals("Administrador")){%>
+		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
+		
+	    <div id="home" class="tab-pane fade in active">
+	      <div align="center">
+	        <h3>Hola <%=session.getAttribute("login")%></h3>
+	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
+	        	 	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
+	        		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
+			  		<a href="logout.jsp">Cerrar Sesión</a><br>
+	     	 </div>
+	    	</div>
 					
 				<%@ include file='formInsertCursos.jsp' %>
 				<%@ include file='formDeleteCursos.jsp' %>

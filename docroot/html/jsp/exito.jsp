@@ -21,13 +21,46 @@
 					
 			<%@ include file='mensajeMal.jsp' %> 
 		<% } %>
-		<div align="center">
-		<h3>Bienvenido <%=session.getAttribute("login")%></h3>
-		<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
-		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-		<a href=logout.jsp">Cerrar Sesión</a><br>
-		</div>
+		<%
+		  	String rol = (String)session.getAttribute("tipoUsuario");
+			if(rol.equals("Alumno")){
+		%>
+		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
 		
+	    <div id="home" class="tab-pane fade in active">
+	      <div align="center">
+	      		<h3>Hola <%=session.getAttribute("login")%></h3>
+	      		
+	        	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
+				<a href="logout.jsp">Cerrar Sesión</a><br>
+	      </div>
+	    </div>		
+				
+				
+		<%}else if(rol.equals("Profesor")){ %>
+	<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Usuarios</h2>
+      <div id="home" class="tab-pane fade in active">
+      	<div align="center">
+       		<h3>Hola <%=session.getAttribute("login")%></h3>
+        	
+        	<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
+        	<a href="logout.jsp">Cerrar Sesión</a><br>
+     	 </div>
+      </div>
+					
+		<%}else if(rol.equals("Administrador")){%>
+	<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Usuarios</h2>
+      <div id="home" class="tab-pane fade in active">
+      	<div align="center">
+       		<h3>Hola <%=session.getAttribute("login")%></h3>
+        	
+       		<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
+        	<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
+        	<a href="logout.jsp">Cerrar Sesión</a><br>
+     	 </div>
+      </div>
+      
+		<% }%>
 		<br>
 		<br>
 		<%@include file="footer.jsp" %>
