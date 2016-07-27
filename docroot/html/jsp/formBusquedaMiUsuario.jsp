@@ -1,7 +1,7 @@
 	       	<br/>
         	<br/>
         <div id="tabla" align="center">
-    			<table class="table" border="2px">
+    			<table class="table" border="3px">
     		<thead>  
     		<tr>
     		
@@ -18,7 +18,8 @@
        	<tbody id="datosUser"></tbody>	
 			</table>
         </div>
-	
+	<br>
+	<br>
 		<script>
 			$(document).ready(function(){
 				console.log("funcion activada con la carga del div con id tabla");

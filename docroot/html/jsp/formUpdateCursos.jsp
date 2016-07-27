@@ -1,4 +1,4 @@
-<div align="left">
+<div align="center">
 <form action="${pageContext.request.contextPath}/UpdateCursos" name="modifiacion" method="post" style="padding-top:30px;">
           <fieldset>
             <legend>Editar perfil de un curso</legend>

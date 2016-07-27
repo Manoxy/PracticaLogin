@@ -1,4 +1,5 @@
-<div align="left">
+<br>
+<div align="center">
   <form action="${pageContext.request.contextPath}/DeleteCursos" name="baja" method="post" style="padding-top:30px;">
           <fieldset>
             <legend>Baja de cursos</legend>
@@ -12,3 +13,4 @@
           </fieldset>
         </form>
 </div>
+<br>

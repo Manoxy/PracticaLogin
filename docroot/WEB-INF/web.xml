@@ -42,4 +42,14 @@
     <servlet-name>UpdateCursos</servlet-name>
     <servlet-class>org.curso.login.UpdateCursos</servlet-class>
   </servlet>
+  	<filter>
+      <filter-name>FiltroSesion</filter-name>
+      <filter-class>org.curso.filtro.NoCacheFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+       <filter-name>FiltroSesion</filter-name>
+       <url-pattern>/menu.jsp</url-pattern>
+    </filter-mapping>
+  	
 </web-app>

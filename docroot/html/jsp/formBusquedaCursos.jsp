@@ -1,3 +1,4 @@
+<div align="center">
  <form action="#" name="busqueda" method="post">
             <fieldset>
               <legend>Busqueda de Cursos</legend>
@@ -22,7 +23,7 @@
             </fieldset>
           </form>
           
-         </div>
+</div>
           
       	<div align="center">
     			<table class="table" border="2px">
@@ -43,6 +44,8 @@
        	<tbody id="datosUser"></tbody>	
 			</table>
         </div>
+        <br>
+        <br>
 		<script>
 				$("#botonBuscar")
 				.on("click",

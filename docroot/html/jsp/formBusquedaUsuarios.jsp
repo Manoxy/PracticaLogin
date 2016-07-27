@@ -1,3 +1,4 @@
+<div align="center">
 <form id="busqueda" method="post" style="padding-top:30px;">
             <fieldset>
               <legend>Busqueda de usuarios</legend>
@@ -13,22 +14,19 @@
                 
                <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="password" maxlength="20" name="clave" id="clave" /><p>
                 
-                <select  name="tipoUsuario">
+                <select  name="tipoUsuario" id="tipoUsuario">
                 	<option value="" disabled selected>Elije una opción </option>
                 	<option value="Administrador"> Administrador</option>
                 	<option value="Alumno"> Alumno</option>
                 	<option value="Profesor"> Profesor</option>
                 
                 </select>
-               
-                <label for="tipoUsuario">Tipo de Usuario&nbsp;</label><input type="text" maxlength="20" name="tipoUsuario" id="tipoUsuario"/><p>
-                
- 
+
                 <label for="enviar"><button type="button" class="btn btn-default" id="botonBuscar">Enviar</button></label>
                
             </fieldset>
           </form>
-      
+ </div>
         	<br/>
         	<br/>
         <div align="center">

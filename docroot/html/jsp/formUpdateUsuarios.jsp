@@ -1,3 +1,5 @@
+<br>
+<div align="center">
  <form action="${pageContext.request.contextPath}/Update" name="modificacion" method="post" style="padding-top:30px;">
           <fieldset>
             <legend>Editar perfil de usuario</legend>
@@ -14,13 +16,18 @@
              
               	<label for="clave">Contrase&ntilde;a&nbsp;</label><input type="text" maxlength="20" name="clave" required/><p>
               
-              	<select id="tipoUsuario" name="tipoUsuario" required>
-              		<option value="selecciona..." disabled selected>Elije una opción </option>
-                	<option value="Administrador" > Administrador</option>
+              	<label for="clave">Tipo de usuario</label>
+                <select  name="tipoUsuario">
+                	<option value="" disabled selected>Elije una opción </option>
+                	<option value="Administrador"> Administrador</option>
                 	<option value="Alumno"> Alumno</option>
                 	<option value="Profesor"> Profesor</option>
+                
                 </select>
+				<br>
               <label for="enviar"><input class="btn btn-default" type="submit" value="Enviar" name="enviar" /></label>
              
           </fieldset>
         </form>
+</div>
+<br>

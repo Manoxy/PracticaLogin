@@ -1,0 +1,10 @@
+body{
+	background-image: url("http://www.localwom.com/i/school-chalkboard-images-wallpaper.jpg");
+	background-attachment: fixed;
+	background-position: center; 
+}
+
+a{
+	color:white;
+	font-weight: bold;
+}

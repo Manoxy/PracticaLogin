@@ -4,6 +4,8 @@
 	<head>
 		<%@include file="header.jsp" %>
 		<title>Curso de JavaEE </title>
+		<link href="html/css/estilos.css" rel="stylesheet" type="text/css">
+		<link href="../css/estilos.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		
@@ -32,7 +34,7 @@
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
 	        <h3>Hola <%=session.getAttribute("login")%></h3>
-	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
+	        <h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
 	        	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
 				<a href="logout.jsp">Cerrar Sesión</a><br>
 	      </div>
@@ -46,7 +48,7 @@
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
 	        <h3>Hola <%=session.getAttribute("login")%></h3>
-	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
+	        <h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
 		  		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
 		  		<a href="logout.jsp">Cerrar Sesión</a><br>
 	      	</div>
@@ -60,7 +62,7 @@
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
 	        <h3>Hola <%=session.getAttribute("login")%></h3>
-	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
+	        <h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
 	        	 	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
 	        		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
 			  		<a href="logout.jsp">Cerrar Sesión</a><br>

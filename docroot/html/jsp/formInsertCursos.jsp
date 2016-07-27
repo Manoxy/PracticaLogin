@@ -1,4 +1,5 @@
-<div id="formularios" align="left">
+<br>
+<div id="formularios" align="center">
       <form role="form" action="${pageContext.request.contextPath}/InputCursos" name="alta" method="post" class="form-horizontal">
           <fieldset>
             <legend>Alta de Cursos</legend>
@@ -22,3 +23,4 @@
           </fieldset>
         </form>
  </div>
+ <br>
