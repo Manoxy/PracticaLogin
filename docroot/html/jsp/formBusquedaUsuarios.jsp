@@ -11,16 +11,16 @@
                 
                 <label for="correo">Correo electrónico&nbsp;</label><input type="text" maxlength="20" name="correo" id="correo" /><p>
                 
-               <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="text" maxlength="20" name="clave" id="clave" /><p>
-                <!-- 
+               <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="password" maxlength="20" name="clave" id="clave" /><p>
+                
                 <select  name="tipoUsuario">
-                	<option value="" selected>Elije una opción </option>
+                	<option value="" disabled selected>Elije una opción </option>
                 	<option value="Administrador"> Administrador</option>
                 	<option value="Alumno"> Alumno</option>
                 	<option value="Profesor"> Profesor</option>
                 
                 </select>
-                -->
+               
                 <label for="tipoUsuario">Tipo de Usuario&nbsp;</label><input type="text" maxlength="20" name="tipoUsuario" id="tipoUsuario"/><p>
                 
  

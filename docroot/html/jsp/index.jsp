@@ -21,9 +21,7 @@
 			</form>
 				<a href="registrarse.jsp">Si no estas registrado haz click aqui</a>
 			</div>
-				
-			
-			<h:mensajitos validado="hola"></h:mensajitos>
+			<br>
 			<br>
 			<%@include file="/html/jsp/footer.jsp" %>
 	</body>

@@ -77,7 +77,7 @@ public class Registro extends HttpServlet {
 	    				// this.getServletContext().getRequestDispatcher("/html/jsp/exito.jsp?comprobado=true").forward(request, response);
 	    				
 	    				System.out.println("El usuario logeado tiene el rol de :" +tipoUsuario);
-		    			response.sendRedirect("html/jsp/usuarios.jsp?comprobado=true");
+		    			response.sendRedirect("html/jsp/exito.jsp?comprobado=true");
 		    			
 		    			
 				    } else {

@@ -10,7 +10,7 @@
                   
                   <label for="correo" >Correo electrónico:&nbsp;</label><input placeholder="Email"  type="text" maxlength="20" name="correo" required/><p>
                   
-                  <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="text" maxlength="20" name="clave" required/><p>
+                  <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="password" maxlength="20" name="clave" required/><p>
                   
                   <select id="tipoUsuario" name="tipoUsuario">
                   	<option value="selecciona..." disabled selected>Elije una opción </option>

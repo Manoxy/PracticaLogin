@@ -17,11 +17,12 @@
 					
 				<%@ include file='mensajeBien.jsp' %> 
 		<% }%>
+		<br>
 		<h3 align="center">
-			Los Datos que has introducido son incorrectos
+			Los datos que has introducido son incorrectos
 		</h3>
-			<p align="center"><a href="index.jsp">Volver al inicio</a></p>
-			
+			<p align="center"><a href="index.jsp">Haz click aquí para volver al inicio</a></p>
+			<br>
 		<%@include file="footer.jsp" %>
 	</body>
 </html>

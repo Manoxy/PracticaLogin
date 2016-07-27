@@ -6,25 +6,28 @@
 		<title>Curso de JavaEE </title>
 	</head>
 	<body>
+		
 	<%
 		  	String comprobado = request.getParameter("comprobado");
 		if(comprobado.equals("true")){
 			%>
 				
 				<%@ include file='mensajeBien.jsp' %> 
-			<%}else if(comprobado.equals("nulo")){ %>
-					<h3> Comprobado es nulo</h3>
-			<% 	}else{%>
+			<%}else if(comprobado.equals("nulo")){ 
+					System.out.println("comprobado es nulo");
+				%>
+					
+					
+			<% 	}else if (comprobado.equals("false")){%>
 					
 				<%@ include file='mensajeMal.jsp' %> 
-		<% }%>
+		<% }
 		
-		<%
     	String rol = (String)session.getAttribute("tipoUsuario");
-	
-			if(rol.equals("Alumno")){
+		
+		if(rol.equals("Alumno")){
 		%>
-		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
+		<h2 align="center"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Alumnos</h2>
 		
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
@@ -38,7 +41,7 @@
 				
 				
 		<%}else if(rol.equals("Profesor")){ %>
-		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
+		<h2 align="center"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Profesores</h2>
 		
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
@@ -52,7 +55,7 @@
 					
 					
 		<%}else if(rol.equals("Administrador")){%>
-		<h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Cursos</h2>
+		<h2 align="center"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control del Administrador</h2>
 		
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
