@@ -1,10 +1,11 @@
 body{
-	background-image: url("http://www.localwom.com/i/school-chalkboard-images-wallpaper.jpg");
+	background-image: url("http://www.wallpapersxl.com/wallpapers/1920x1080/fondo-de-color-verde-claro/1988338/fondo-de-color-verde-claro-hq-morado-azul-perla-fotos-im-genes-hd-y-1988338.jpg");
 	background-attachment: fixed;
 	background-position: center; 
 }
 
-a{
-	color:white;
-	font-weight: bold;
+a, h2, h3 , h4, h5, p{
+	color: #8FF216; 
+	text-shadow: black 0.1em 0.1em 0.2em;
+	
 }
