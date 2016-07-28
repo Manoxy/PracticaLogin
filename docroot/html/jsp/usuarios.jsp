@@ -32,11 +32,12 @@
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
 	        <h3>Hola <%=session.getAttribute("login")%></h3>
-	        <h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
+	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
 	        	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
-				<a href="logout.jsp">Cerrar Sesión</a><br>
+				<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
 	      </div>
-	    </div>		
+	    </div>	
+	    <br>	
 				<%@ include file='formBusquedaMiUsuario.jsp' %> 
 				
 		<%}else if(rol.equals("Profesor")){ %>
@@ -44,11 +45,12 @@
       <div id="home" class="tab-pane fade in active">
       	<div align="center">
        		<h3>Hola <%=session.getAttribute("login")%></h3>
-        	<h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
+        	<h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
         	<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-        	<a href="logout.jsp">Cerrar Sesión</a><br>
+        	<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
      	 </div>
       </div>
+      <br>
 					
 					<%@ include file='formBusquedaUsuarios.jsp' %>
 					
@@ -57,22 +59,22 @@
       <div id="home" class="tab-pane fade in active">
       	<div align="center">
        		<h3>Hola <%=session.getAttribute("login")%></h3>
-        	<h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
+        	<h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
        		<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
         	<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-        	<a href="logout.jsp">Cerrar Sesión</a><br>
+        	<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
      	 </div>
       </div>
-					
+		<br>			
 				<%@ include file='formInsertUsuarios.jsp' %>
 				<%@ include file='formDeleteUsuarios.jsp' %>
 				<%@ include file='formUpdateUsuarios.jsp' %>
 				<%@ include file='formBusquedaUsuarios.jsp' %> 
 		<% }%>
 		
-		 <footer>
+		 <br>
 			<%@include file="/html/jsp/footer.jsp" %>
-		</footer>
+		
 
 </body>
 </html>

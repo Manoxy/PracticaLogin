@@ -9,6 +9,16 @@
 		    String clave = request.getParameter("clave");
 		    String tipoUsuario = request.getParameter("tipoUsuario");
 		    
+		    String tabla = "<table class=\"table\" id=\"tabla\" border=\"3px\">";
+		    		tabla+=     "<thead> <tr>";
+		            tabla+= "<th>&nbsp;ID de Usuario&nbsp;</th>";
+		            tabla+="<th>&nbsp;Nombre de Usuario&nbsp;</th>";
+		            tabla+="<th>&nbsp;Nombre&nbsp;</th>";
+		            tabla+="<th>&nbsp;Apellidos&nbsp;</th>";
+		            tabla+="<th>&nbsp;Correo electrónico&nbsp;</th>";
+		            tabla+="<th>&nbsp;Contrase&ntilde;a&nbsp;</th>";
+		            tabla+="<th>&nbsp;Tipo de Usuario&nbsp;</th> </tr> </thead>";
+		       		
 		    
         try {
         	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "123456");
@@ -17,6 +27,7 @@
 	        PreparedStatement pst = null;
 	        pst = con.prepareStatement(consulta);
 	        rs = pst.executeQuery();
+	        out.println(tabla);
             while(rs.next()) {
             	
                 out.println("<TR>");
@@ -30,6 +41,7 @@
              
                 out.println("</TR>"); 
                 }
+            	out.println("</table>");
 
 
             } 

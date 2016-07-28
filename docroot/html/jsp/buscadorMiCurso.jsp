@@ -2,8 +2,16 @@
 
 	<% 
 			String nombre = (String)session.getAttribute("login");
-	
-		    
+			String tabla = "<table class=\"table\" id=\"tabla\" border=\"3px\"> <thead>  <tr>";
+		   
+		    tabla+= "<th>&nbsp;Usuario del profesor&nbsp;</th>";
+		    tabla+="<th>&nbsp;Nombre del profesor&nbsp;</th>";
+		    tabla+="<th>&nbsp;Apellidos&nbsp;</th>";
+			tabla+="<th>&nbsp;Nombre del curso&nbsp;</th>";
+			tabla+="<th>&nbsp;Fecha de inicio&nbsp;</th>";
+			tabla+="<th>&nbsp;Fecha de fin&nbsp;</th>";
+			tabla+="<th>&nbsp;Numero de horas&nbsp;</th> </tr> </thead>";
+		         
 		    
         try {
         	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "123456");
@@ -12,6 +20,7 @@
 	        PreparedStatement pst = null;
 	        pst = con.prepareStatement(consulta);
 	        rs = pst.executeQuery();
+	        out.println(tabla);
             while(rs.next()) {
             	
             	out.println("<TR>");
@@ -26,7 +35,7 @@
                 out.println("</TR>"); 
                 }
 
-
+				out.println("</table>");
             } 
             catch(SQLException e) {
             	

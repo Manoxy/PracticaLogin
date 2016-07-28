@@ -1,51 +1,87 @@
 <div align="center">
-<form id="busqueda" method="post" style="padding-top:30px;">
-            <fieldset>
-              <legend>Busqueda de usuarios</legend>
-              	<label for="login">ID de Usuario &nbsp;</label><input type="number" min="1" name="idUsuario" id="idUsuario" /><p>
-              
-                <label for="login">Nombre Usuario &nbsp;</label><input type="text" maxlength="20" name="nombreUsuario" id="nombreUsuario" /><p>
-             
-                <label for="nombre">Nombre&nbsp;</label><input type="text" maxlength="20" name="nombre" id="nombre" /><p>
+		<br>    
+			<hr>
+				<span id="titulos">Busqueda de usuarios </span>
+			<hr>
+         <form id="busqueda" method="post" style="padding-top:30px;">
+            <table>
+            <tr>
+                  <td>
+                  <label for="idUsuario">ID de Usuario &nbsp;</label>
+                  </td>
+                  	<td>
+                  <input type="number" min="1" name="idUsuario" id="idUsuario" />
+              		</td>
+              	</tr>
+            	<tr>
+                  <td>
+                  <label for="nombreUsuario" >Nombre de Usuario: &nbsp;</label>
+                  </td>
+                  	<td>
+                  <input placeholder="Nombre de Usuario"  type="text" maxlength="20" name="nombreUsuario" id="nombreUsuario" /><p>
+              		</td>
+              	</tr>
+              	<tr>
+              		<td>
+                  <label for="nombre" >Nombre:&nbsp;</label>
+                  	</td>
+                  	<td>
+                  <input placeholder="Nombre"  type="text" maxlength="20" name="nombre" id="nombre" /><p>
+                  	</td>
+                  </tr>
+                <tr>
+                  	<td>
+                  <label for="apellidos" >Apellidos:&nbsp;</label>
+                  	</td>
+                  	<td>
+                  	<input placeholder="Apellidos"  type="text" maxlength="20" name="apellidos" id="apellidos"/><p>
+                  	</td>
+                 <tr>
+                 	<td>
+                  <label for="correo" >Correo electrónico:&nbsp;</label>
+                  	</td>
+                  	<td>
+                  <input placeholder="Email"  type="text" maxlength="20" name="correo"  id="correo"/><p>
+                  	</td>
+                  </tr>
+                  <tr>
+                  	<td>
+                  <label for="clave">Contrase&ntilde;a&nbsp;</label>
+                  	</td>
+                  	<td>
+                  		<input type="password" maxlength="20" name="clave"  id="clave"/>
+                  	</td>
+                  </tr>
+                  <tr>
+                  	<td>
+                  		 <label for="clave">Tipo de usuario</label>
+                  	</td>
+                  	<td>
+                  		<select  name="tipoUsuario" id="tipoUsuario">
+                		<option value="" disabled selected>Elije una opción </option>
+                			<option value="Administrador"> Administrador</option>
+                			<option value="Alumno"> Alumno</option>
+                			<option value="Profesor"> Profesor</option>
                 
-                <label for="apellidos">Apellidos&nbsp;</label><input type="text" maxlength="20" name="apellidos" id="apellidos" /><p>
-                
-                <label for="correo">Correo electrónico&nbsp;</label><input type="text" maxlength="20" name="correo" id="correo" /><p>
-                
-               <label for="clave">Contrase&ntilde;a&nbsp;</label><input type="password" maxlength="20" name="clave" id="clave" /><p>
-                
-                <select  name="tipoUsuario" id="tipoUsuario">
-                	<option value="" disabled selected>Elije una opción </option>
-                	<option value="Administrador"> Administrador</option>
-                	<option value="Alumno"> Alumno</option>
-                	<option value="Profesor"> Profesor</option>
-                
-                </select>
-
-                <label for="enviar"><button type="button" class="btn btn-default" id="botonBuscar">Enviar</button></label>
-               
-            </fieldset>
+                		</select>
+                  	</td>
+                  </tr>
+                <tr>
+                	<td>
+                		<br>
+                 		 <label for="enviar"><button type="button" class="btn btn-default" id="botonBuscar">Enviar</button></label>
+                	</td>
+                </tr>
+            
+          </table>
           </form>
  </div>
         	<br/>
         	<br/>
         <div align="center">
-    			<table class="table" id="tabla" border="2px">
-    		<thead>  
-    		<tr>
     		
-            <th>&nbsp;ID de Usuario&nbsp;</th>
-            <th>&nbsp;Nombre de Usuario&nbsp;</th>
-            <th>&nbsp;Nombre&nbsp;</th>
-            <th>&nbsp;Apellidos&nbsp;</th>
-            <th>&nbsp;Correo electrónico&nbsp;</th>
-            <th>&nbsp;Contrase&ntilde;a&nbsp;</th>
-            <th>&nbsp;Tipo de Usuario&nbsp;</th>
-       		
-       		</tr>
-       		</thead>
-       	<tbody id="datosUser"></tbody>	
-			</table>
+       	<div id="datosUser"> </div>	
+			
         </div>
 	
 		<script>

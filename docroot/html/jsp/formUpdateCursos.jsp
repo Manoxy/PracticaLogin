@@ -1,25 +1,44 @@
-<div align="center">
-<form action="${pageContext.request.contextPath}/UpdateCursos" name="modifiacion" method="post" style="padding-top:30px;">
-          <fieldset>
-            <legend>Editar perfil de un curso</legend>
-            	  <label for="idCurso">ID del Curso &nbsp;</label><input type="number" maxlength="10" name="idCurso" required/><p>
-          	
-	              <label for="nombre">Nombre&nbsp;</label><input type="text" size="30" name="nombre" required/><p>
-	              
-	            <b>Descripción&nbsp;</b><br/><textarea name="descripcion" cols="50" rows="4" required> </textarea><p>
-	              
-	              <label for="fechaInicio">Fecha de inicio&nbsp;</label><input type="date" size="10" name="fechaInicio" required/><p>
-	              
-	              <label for="fechaFin">Fecha de fin&nbsp;</label><input type="date" size="10" name="fechaFin" required/><p>
-	             
-	              <label for="numeroHoras">Número de horas&nbsp;</label><input type="number" name="numeroHoras" min="1" required /><p>
-	              
-	             <b>Objetivos&nbsp;</b><br/><textarea name="objetivos" cols="50" rows="4" required> </textarea><p>
-	              
-	              <b>Requisitos&nbsp; </b><br/><textarea name="requisitos" cols="50" rows="4" required> </textarea><p>
-	              
-	              <label for="enviar"><input class="btn btn-default" type="submit" value="Enviar" name="enviar" /></label>
+<br>
+<div id="formularios" align="center">
+	 <hr>
+        	<span id="titulos">Editar el perfil de un curso</span>
+        <hr>
+      <form role="form" action="${pageContext.request.contextPath}/UpdateCursos" name="alta" method="post" class="form-horizontal">
+          <table>
+            <tr>
+              <td><label for="nombre">Nombre&nbsp;</label></td>
              
-          </fieldset>
+              <td><input type="text" size="30" maxlength="30" name="nombre" required/><br><br> </td>
+            </tr>
+            <tr>
+            	
+              <td><b>Descripción</b>&nbsp;<br/></td>
+              <td><textarea name="descripcion" cols="50" rows="4"> </textarea><br><br></td>
+            </tr>
+            <tr>
+              <td><label for="fechaInicio">Fecha de inicio&nbsp;</label>
+              </td>
+              <td><input type="date"  name="fechaInicio" required/> <br><br></td>
+            </tr>
+            <tr>
+            	<td><label for="fechaFin">Fecha de fin&nbsp;</label></td>
+            	<td><input type="date" name="fechaFin" required/><br><br></td>
+              
+             <tr>
+             	<td><label for="numeroHoras">Número de horas&nbsp;</label></td>
+             	<td><input type="number" name="numeroHoras" min="1" required/><br><br></td>
+              <tr>
+              <td><b>Objetivos&nbsp; </b><br/></td>
+              <td><textarea name="objetivos" cols="50" rows="4"> </textarea><br><br></td>
+              </tr>
+              <tr>
+              	<td><b>Requisitos&nbsp; </b><br/></td>
+              	<td><textarea name="requisitos" cols="50" rows="4"> </textarea><br><br></td>
+              <tr>
+             <tr>
+              	<td><label for="enviar"><input class="btn btn-default" type="submit" value="Enviar" name="enviar" /></label></td>
+             </tr>
+          </table>
         </form>
-</div>       
+ </div>
+ <br>   

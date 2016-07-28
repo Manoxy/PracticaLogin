@@ -9,7 +9,7 @@
 	</head>
 	<body>
 			<hr>
-			<h4 align="center">Acceso usuarios registrados</h4>
+			<h3 align="center">Acceso usuarios registrados</h3>
 			<hr>
 			<div id="formLogin" align="center">
 			<form action="${pageContext.request.contextPath}/log" name="formulario" method="get">

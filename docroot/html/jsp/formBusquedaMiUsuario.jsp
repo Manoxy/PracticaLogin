@@ -1,22 +1,8 @@
 	       	<br/>
         	<br/>
-        <div id="tabla" align="center">
-    			<table class="table" id="tabla" border="3px">
-    		<thead>  
-    		<tr>
-    		
-            <th>&nbsp;ID de Usuario&nbsp;</th>
-            <th>&nbsp;Nombre de Usuario&nbsp;</th>
-            <th>&nbsp;Nombre&nbsp;</th>
-            <th>&nbsp;Apellidos&nbsp;</th>
-            <th>&nbsp;Correo electrónico&nbsp;</th>
-            <th>&nbsp;Contrase&ntilde;a&nbsp;</th>
-            <th>&nbsp;Tipo de Usuario&nbsp;</th>
-       		
-       		</tr>
-       		</thead>
-       	<tbody id="datosUser"></tbody>	
-			</table>
+        <div align="center">
+       		<div id="datosUser"></div>	
+			
         </div>
 	<br>
 	<br>

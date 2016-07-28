@@ -11,6 +11,19 @@
 		    String objetivos = request.getParameter("objetivos");
 		    String requisitos = request.getParameter("requisitos");
 		    
+		    String tabla= "<table class=\"table\" id=\"tabla\" border=\"3px\">";
+		    		tabla +="<thead> <tr>";
+		            tabla +="<th>&nbsp;ID de Curso&nbsp;</th>";
+		            tabla+= "<th>&nbsp;Nombre&nbsp;</th>";
+		            tabla+= "<th>&nbsp;Descripción&nbsp;</th>";
+		            tabla+= "<th>&nbsp;Fecha de inicio&nbsp;</th>";
+		            tabla+= "<th>&nbsp;Fecha de fin&nbsp;</th>";
+		            tabla+= "<th>&nbsp;Número de horas&nbsp;</th>";
+		            tabla += "<th>&nbsp;Objetivos&nbsp;</th>";
+		            tabla += "<th>&nbsp;Requisitos&nbsp;</th>";
+		       		tabla += "</tr> </thead>";
+		       		
+		    
         try {
         	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "123456");
 			String consulta =("SELECT * FROM cursos WHERE id LIKE '%"+idCurso+"%' AND nombre LIKE '%"+nombre+"%' AND descripcion LIKE '%"+descripcion+"%' AND fecha_inicio LIKE '%"+fechaInicio+"%' AND fecha_fin LIKE '%"+fechaFin+"%' AND numero_horas LIKE '%"+numeroHoras+"%' AND objetivos LIKE '%"+objetivos+"%' AND requisitos LIKE '%"+requisitos+"%';");   
@@ -18,6 +31,7 @@
 	        PreparedStatement pst = null;
 	        pst = con.prepareStatement(consulta);
 	        rs = pst.executeQuery();
+	        out.println(tabla);
             while(rs.next()) {
             	
                 out.println("<TR>");
@@ -32,6 +46,7 @@
                 
                 out.println("</TR>"); 
                 }
+            	out.println("</table>");
                 
             } 
             catch(SQLException e) {

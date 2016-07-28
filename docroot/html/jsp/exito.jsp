@@ -31,10 +31,9 @@
 		
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
-	      		<h3>Hola <%=session.getAttribute("login")%></h3>
-	      		
+	      		<h3>Hola <%=session.getAttribute("login")%></h3> 
 	        	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
-				<a href="logout.jsp">Cerrar Sesión</a><br>
+				<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
 	      </div>
 	    </div>		
 				
@@ -43,10 +42,10 @@
 	<h2 align="center"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Profesores</h2>
       <div id="home" class="tab-pane fade in active">
       	<div align="center">
-       		<h3>Hola <%=session.getAttribute("login")%></h3>
-        	
+       		
+        	<h3>Hola <%=session.getAttribute("login")%></h3> 
         	<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-        	<a href="logout.jsp">Cerrar Sesión</a><br>
+        	<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
      	 </div>
       </div>
 					
@@ -54,11 +53,11 @@
 	<h2 align="center"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;Panel de control de Administradores</h2>
       <div id="home" class="tab-pane fade in active">
       	<div align="center">
-       		<h3>Hola <%=session.getAttribute("login")%></h3>
-        	
+       		
+        	<h3>Hola <%=session.getAttribute("login")%></h3> 
        		<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
         	<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-        	<a href="logout.jsp">Cerrar Sesión</a><br>
+        	<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
      	 </div>
       </div>
       

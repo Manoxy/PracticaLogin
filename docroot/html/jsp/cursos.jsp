@@ -34,11 +34,12 @@
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
 	        <h3>Hola <%=session.getAttribute("login")%></h3>
-	        <h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
+	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
 	        	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
-				<a href="logout.jsp">Cerrar Sesión</a><br>
+				<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
 	      </div>
 	    </div>
+	    <br>
 				<%@ include file='formBusquedaCursos.jsp' %> 
 				
 				
@@ -48,11 +49,12 @@
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
 	        <h3>Hola <%=session.getAttribute("login")%></h3>
-	        <h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
+	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
 		  		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-		  		<a href="logout.jsp">Cerrar Sesión</a><br>
+		  		<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
 	      	</div>
 	   	 	</div>
+	   	 	<br>
 					<%@ include file='formBusquedaMiCurso.jsp' %>
 					
 					
@@ -62,12 +64,13 @@
 	    <div id="home" class="tab-pane fade in active">
 	      <div align="center">
 	        <h3>Hola <%=session.getAttribute("login")%></h3>
-	        <h5>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h5>
+	        <h3>Usted tiene el rol de <%=session.getAttribute("tipoUsuario")%> </h3>
 	        	 	<a href="usuarios.jsp?comprobado=nulo">Gestión de Usuarios</a> <br>
 	        		<a href="cursos.jsp?comprobado=nulo">Gestión de Cursos</a> <br>
-			  		<a href="logout.jsp">Cerrar Sesión</a><br>
+			  		<a href="logout.jsp" id="logout">Cerrar Sesión</a><br>
 	     	 </div>
 	    	</div>
+	    	<br>
 					
 				<%@ include file='formInsertCursos.jsp' %>
 				<%@ include file='formDeleteCursos.jsp' %>
@@ -75,9 +78,7 @@
 				<%@ include file='formBusquedaCursos.jsp' %> 
 		<% }%>
     
-     <footer>
 			<%@include file="/html/jsp/footer.jsp" %>
-		</footer>
-    
+
 </body>
 </html>
