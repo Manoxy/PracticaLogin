@@ -16,19 +16,21 @@
 				<br>
 					
 						<br/>
-							<b>Login </b> <br/><input type="text" name="login" size="25" required/>
-						<br/>	
-						   	<b>Password </b> <br/><input type="password" name="password" size="25" required/>
+							<b><span id="letras">Usuario </span></b><br> <br/><input type="text" name="login" size="30" required/>
+						<br/>
+						<br>
+						   	<b><span id="letras">Contrase&ntilde;a</span></b><br> <br/><input type="password" name="password" size="30" required/>
 						<br/>
 						<div class="form-group" >
+						<br>
 						<label for="enviar"><input class="btn btn-default" type="submit" value="Enviar" name="enviar" /></label>
 						</div>
 			</form>
-			<br>
+			
 			<br>
 				<a id="mostrarRegistro" href="#">Si no estas registrado haz click aqui </a>
 			<br>
-			<br>
+			
 		<div id="formRegistro">
 					
 	          <hr>

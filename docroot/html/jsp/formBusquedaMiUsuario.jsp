@@ -1,7 +1,7 @@
 	       	<br/>
         	<br/>
         <div id="tabla" align="center">
-    			<table class="table" border="3px">
+    			<table class="table" id="tabla" border="3px">
     		<thead>  
     		<tr>
     		

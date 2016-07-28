@@ -19,9 +19,9 @@
 				<%@ include file='mensajeBien.jsp' %> 
 		<% }%>
 		<br>
-		<h3 align="center">
+		<h2 align="center">
 			Los datos que has introducido son incorrectos
-		</h3>
+		</h2>
 			<p align="center"><a href="index.jsp">Haz click aquí para volver al inicio</a></p>
 			<br>
 		<%@include file="footer.jsp" %>

@@ -1,11 +1,40 @@
 body{
-	background-image: url("http://www.wallpapersxl.com/wallpapers/1920x1080/fondo-de-color-verde-claro/1988338/fondo-de-color-verde-claro-hq-morado-azul-perla-fotos-im-genes-hd-y-1988338.jpg");
+	background-image: url("http://freetopwallpaper.com/wp-content/gallery/sky/sky-wallpaper-hd-background-picture-106.jpg");
 	background-attachment: fixed;
 	background-position: center; 
+	background-repeat: no-repeat;
+	
 }
 
-a, h2, h3 , h4, h5, p{
-	color: #8FF216; 
+a, h4, h5{
+	color: #00FF6B; 
 	text-shadow: black 0.1em 0.1em 0.2em;
 	
+}
+hr{
+	color: black;	
+}
+a{
+	font-size: medium;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	color: yellow;
+}
+#letras{
+	font-size: medium;
+}
+#mensajeBien, #mensajeMal{
+	opacity: 0.9;
+}
+h3{
+	color: #00FF6B;
+	text-shadow: black 0.1em 0.1em 0.1em;
+}
+#tabla{
+	font-size: medium;
+	color: black;
+	background-color: white;
+	opacity: 0.9;
+}
+thead{
+	background-color: LightBlue;
 }

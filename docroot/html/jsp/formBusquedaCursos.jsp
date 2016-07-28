@@ -26,7 +26,7 @@
 </div>
           
       	<div align="center">
-    			<table class="table" border="2px">
+    			<table class="table" id="tabla" border="2px">
     		<thead>  
     		<tr>
     		
